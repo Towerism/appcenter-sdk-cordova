@@ -60,6 +60,14 @@
         <header-file src="src/ios/AppCenterAnalyticsPlugin.h" />
         <source-file src="src/ios/AppCenterAnalyticsPlugin.m" />
 
-        <framework src="AppCenter" type="podspec" spec="~> 2.0.1" />
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="AppCenter" spec="~> 2.0.1" />
+                <pod name="AppCenter/Analytics" spec="~> 2.0.1" />
+            </pods>
+        </podspec>
     </platform>
 </plugin>
