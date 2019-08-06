@@ -2,9 +2,9 @@
 
 PLATFORMPATH="/Applications/Xcode.app/Contents/Developer/Platforms"
 TOOLSPATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
-export LIBNAME="mylib"
-export SRC_ROOT="../common/mylib"
-IPHONEOS_DEPLOYMENT_TARGET="8.0"
+export LIBNAME="lowmemoryplugin"
+export SRC_ROOT="../common"
+IPHONEOS_DEPLOYMENT_TARGET="10.0"
 pwd=`pwd`
 TEMP_DIR="$pwd/temp"
 OUTPUT_DIR="$pwd/libs"
@@ -49,7 +49,7 @@ buildit()
 
     export CC="$(xcrun -sdk iphoneos -find clang)"
     #CPP="$CC -E"
-    export CFLAGS="-arch ${target} -isysroot $PLATFORMPATH/$platform.platform/Developer/SDKs/$platform$SDKVERSION.sdk -miphoneos-version-min=$SDKVERSION"
+    export CFLAGS="-arch ${target} -isysroot $PLATFORMPATH/$platform.platform/Developer/SDKs/$platform$SDKVERSION.sdk"
     export AR=$(xcrun -sdk iphoneos -find ar)
     export RANLIB=$(xcrun -sdk iphoneos -find ranlib)
     #CPPFLAGS="-arch ${target}  -isysroot $PLATFORMPATH/$platform.platform/Developer/SDKs/$platform$SDKVERSION.sdk -miphoneos-version-min=$SDKVERSION"
